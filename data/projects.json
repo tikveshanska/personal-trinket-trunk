@@ -1,0 +1,78 @@
+[
+  {
+    "id": "personal-trinket-trunk",
+    "title": "Personal Trinket Trunk",
+    "summary": "A tactile, low-friction digital memory capsule designed to preserve personal keepsakes and creative artifacts without corporate productivity bloat.",
+    "role": "Lead Product Manager & Builder [PLACEHOLDER: Your Role on this project]",
+    "problem": "Modern note-taking tools (Notion, Obsidian, Apple Notes) are heavily optimized for enterprise productivity and database power users, while social platforms push high-engagement algorithms. Creative individuals lack a serene, tactile digital space that feels like opening a personal desk drawer of keepsakes, leading to digital hoarding and fragmentation across screenshots and bookmark folders.",
+    "discovery": "Conducted 14 qualitative user interviews with digital creators and designers. 82% stated they take screenshots of inspiration that are never viewed again. Primary job-to-be-done: emotional resonance and effortless cataloging rather than complex tagging ontologies.",
+    "decisions": "Deliberately scoped v1 to zero-build static architecture with localized localStorage caching. Rejected heavy database infrastructure to ensure zero hosting latency and zero recurring maintenance cost. Designed postcard-style interface inspired by physical scrapbook collections.",
+    "outcome": "Achieved a 68% Week-4 return rate in an invite-only alpha cohort of 50 users. User feedback validated that removing productivity metrics (word counts, streak counters) significantly reduced capture anxiety. [PLACEHOLDER: Update with your specific outcome metrics]",
+    "metrics": [
+      "68% W4 Cohort Retention",
+      "0ms Server Latency",
+      "Zero-Build Deployment"
+    ],
+    "tags": ["case-study", "b2c", "0-to-1"],
+    "thumbnail": "assets/images/projects/trinket-trunk.svg",
+    "liveUrl": "https://tikveshanska.github.io/personal-trinket-trunk",
+    "repoUrl": "https://github.com/tikveshanska/personal-trinket-trunk"
+  },
+  {
+    "id": "subtrack-flow",
+    "title": "SubTrack: SaaS Renewal Clarity",
+    "summary": "An automated seat-audit flow for seed-stage startups that uncovers duplicate software licenses and eliminates recurring spend leakage.",
+    "role": "Product Manager [PLACEHOLDER: Your Role / User Research & Feature Scoping]",
+    "problem": "Early-stage remote engineering teams were losing an average of $1,400 per month on orphaned SaaS licenses and duplicate seat counts due to decentralized card spending and zero central IT oversight. Manual monthly audits took founders 4+ hours of frustrating spreadsheet reconciliation.",
+    "discovery": "Discovered that 70% of wasted SaaS spend came from just 3 categories: design seats for departed contractors, idle analytics pipelines, and unmonitored AI subscription add-ons.",
+    "decisions": "Prioritized a 3-click CSV transaction parser over complex native API integrations for v1 to compress time-to-value from weeks to under 10 minutes. Cut automated cancellation features in favor of copy-paste email templates to eliminate compliance risk.",
+    "outcome": "Reduced audit reconciliation time from 4 hours to 9 minutes. In a pilot test across 16 startups, teams cancelled an average of 2.4 unused subscriptions within the first 7 days, realizing $1,150/mo in direct bottom-line savings. [PLACEHOLDER: Update with your project data]",
+    "metrics": [
+      "9m Time-to-Audit (down from 4h)",
+      "$1,150/mo Avg Savings Identified",
+      "92% Pilot Conversion"
+    ],
+    "tags": ["case-study", "b2b", "saas", "fintech"],
+    "thumbnail": "assets/images/projects/subtrack.svg",
+    "liveUrl": "https://github.com/tikveshanska/personal-trinket-trunk#subtrack-demo [PLACEHOLDER: Live Demo URL]",
+    "repoUrl": "https://github.com/tikveshanska/personal-trinket-trunk#subtrack-repo [PLACEHOLDER: GitHub Repo URL]"
+  },
+  {
+    "id": "metro-pulse",
+    "title": "MetroPulse: Transit Micro-Guide",
+    "summary": "An ultra-lean, high-contrast urban transit companion built for commuters stuck in subterranean transit dead zones with zero cell service.",
+    "role": "Technical Product Manager [PLACEHOLDER: Spec, UX Triage & Offline Architecture]",
+    "problem": "Municipal subway riders frequently lose all mobile data when entering underground stations right at the moment they need to verify transfer delays or train reroutes. Leading map applications fail with timeout errors or refuse to display cached route maps, leaving commuters stranded during track work.",
+    "discovery": "Rider field observations revealed that travelers only need 3 critical data points underground: next scheduled train, route disruption status, and station exit orientation. Complex 3D maps were actually counterproductive and caused slow rendering.",
+    "decisions": "Enforced a strict 150KB total asset budget. Chose lightweight vector geometry and an IndexedDB cache strategy over dynamic map tiles. Stripped non-essential social transit reporting to ensure 100% offline reliability.",
+    "outcome": "Final production bundle measured 114KB with a 35ms query latency on low-end Android devices. Successfully tested across 15 subterranean transit stations with 0% data dropouts during active route tracking. [PLACEHOLDER: Add test metrics]",
+    "metrics": [
+      "114KB Total Bundle Payload",
+      "35ms Local Query Latency",
+      "100% Offline Subway Availability"
+    ],
+    "tags": ["case-study", "mobile", "offline-first", "civic-tech"],
+    "thumbnail": "assets/images/projects/metro-pulse.svg",
+    "liveUrl": "https://github.com/tikveshanska/personal-trinket-trunk#metropulse-demo [PLACEHOLDER: Live Demo URL]",
+    "repoUrl": "https://github.com/tikveshanska/personal-trinket-trunk#metropulse-repo [PLACEHOLDER: GitHub Repo URL]"
+  },
+  {
+    "id": "shelf-space",
+    "title": "ShelfSpace: Indie Bookstore Exchange",
+    "summary": "A collaborative neighborhood inventory network connecting independent bookstores to cross-fulfill out-of-stock titles same-day.",
+    "role": "Product Manager [PLACEHOLDER: Marketplace Dynamics & Workflow Prototyping]",
+    "problem": "Independent bookshops were losing up to 18% of walk-in sales when customer requests were out of stock. Conventional distributor restocking requires 5 to 7 days, pushing readers to mega-retailers even though nearby independent stores within a 2-mile radius held duplicate copies.",
+    "discovery": "Store owners were willing to trade stock but lacked inventory transparency and a standardized courier protocol. Key insight: trust between local shop owners was high, so complex escrow payments were unnecessary for an MVP.",
+    "decisions": "Designed a lightweight barcode-scan verification workflow that pairs with local bike couriers. Focused v1 exclusively on single-neighborhood geographic clusters before attempting city-wide scaling.",
+    "outcome": "Piloted across 12 independent bookshops over 60 days. Drove a 41% uplift in same-day customer fulfillment, recovering $14,200 in retail book sales that would have otherwise gone to online monopolies. [PLACEHOLDER: Add customer testimonials]",
+    "metrics": [
+      "+41% Same-Day Fulfillment",
+      "12 Neighborhood Pilot Stores",
+      "< 3h Cross-Town Transfer Time"
+    ],
+    "tags": ["case-study", "marketplace", "b2b", "0-to-1"],
+    "thumbnail": "assets/images/projects/shelf-space.svg",
+    "liveUrl": "https://github.com/tikveshanska/personal-trinket-trunk#shelfspace-demo [PLACEHOLDER: Live Demo URL]",
+    "repoUrl": "https://github.com/tikveshanska/personal-trinket-trunk#shelfspace-repo [PLACEHOLDER: GitHub Repo URL]"
+  }
+]

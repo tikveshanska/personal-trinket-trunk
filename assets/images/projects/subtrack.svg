@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <!-- Card Background -->
+  <rect width="400" height="250" fill="#EDE6CE"/>
+  
+  <!-- Subtle Blueprint Grid lines -->
+  <line x1="20" y1="50" x2="380" y2="50" stroke="#D9D5C8" stroke-width="1"/>
+  <line x1="20" y1="100" x2="380" y2="100" stroke="#D9D5C8" stroke-width="1"/>
+  <line x1="20" y1="150" x2="380" y2="150" stroke="#D9D5C8" stroke-width="1"/>
+  <line x1="20" y1="200" x2="380" y2="200" stroke="#D9D5C8" stroke-width="1"/>
+
+  <!-- Outer frame border -->
+  <rect x="15" y="15" width="370" height="220" fill="none" stroke="#16172B" stroke-width="1.5"/>
+
+  <!-- Browser Mockup -->
+  <g transform="translate(45, 35)">
+    <rect x="6" y="6" width="300" height="170" rx="4" fill="#16172B" opacity="0.15"/>
+    <rect width="300" height="170" rx="4" fill="#FAF6EE" stroke="#16172B" stroke-width="1.5"/>
+    <!-- Chrome Bar -->
+    <rect width="300" height="24" rx="4" fill="#E4E1D8" stroke="#16172B" stroke-width="1.5"/>
+    <circle cx="14" cy="12" r="3.5" fill="#EE5B5B"/>
+    <circle cx="26" cy="12" r="3.5" fill="#F5BE4F"/>
+    <circle cx="38" cy="12" r="3.5" fill="#62C554"/>
+    <rect x="60" y="6" width="180" height="12" rx="2" fill="#FAF6EE" stroke="#D9D5C8" stroke-width="1"/>
+    <text x="70" y="15" font-family="'Space Mono', monospace" font-size="7" fill="#16172B">subtrack.internal/audit</text>
+
+    <!-- Dashboard Bars -->
+    <rect x="16" y="38" width="128" height="50" rx="2" fill="#FFFFFF" stroke="#16172B" stroke-width="1"/>
+    <text x="24" y="52" font-family="'Space Mono', monospace" font-size="7" fill="#16172B">MONTHLY SEATS AUDITED</text>
+    <text x="24" y="74" font-family="'Playfair Display', serif" font-size="16" font-weight="bold" fill="#16172B">$1,420</text>
+    <text x="85" y="72" font-family="'Space Mono', monospace" font-size="8" fill="#C1493B">SAVED/MO</text>
+
+    <!-- Table snippet -->
+    <rect x="156" y="38" width="128" height="115" rx="2" fill="#FFFFFF" stroke="#16172B" stroke-width="1"/>
+    <rect x="156" y="38" width="128" height="18" fill="#E4E1D8"/>
+    <text x="164" y="50" font-family="'Space Mono', monospace" font-size="6.5" font-weight="bold" fill="#16172B">ORPHAN SEATS</text>
+    <text x="250" y="50" font-family="'Space Mono', monospace" font-size="6.5" font-weight="bold" fill="#C1493B">ACTION</text>
+    
+    <text x="164" y="72" font-family="'Space Mono', monospace" font-size="6.5" fill="#16172B">Figma Pro (4)</text>
+    <rect x="246" y="63" width="30" height="11" rx="1" fill="#C1493B"/>
+    <text x="261" y="71" font-family="'Space Mono', monospace" font-size="5" fill="#FAF6EE" text-anchor="middle">REVOKE</text>
+
+    <text x="164" y="94" font-family="'Space Mono', monospace" font-size="6.5" fill="#16172B">Notion AI (12)</text>
+    <rect x="246" y="85" width="30" height="11" rx="1" fill="#C1493B"/>
+    <text x="261" y="93" font-family="'Space Mono', monospace" font-size="5" fill="#FAF6EE" text-anchor="middle">REVOKE</text>
+
+    <text x="164" y="116" font-family="'Space Mono', monospace" font-size="6.5" fill="#16172B">Datadog APM</text>
+    <rect x="246" y="107" width="30" height="11" rx="1" fill="#6FAFB6"/>
+    <text x="261" y="115" font-family="'Space Mono', monospace" font-size="5" fill="#FAF6EE" text-anchor="middle">KEEP</text>
+
+    <rect x="16" y="100" width="128" height="53" rx="2" fill="#F2EAD8" stroke="#16172B" stroke-width="1"/>
+    <text x="24" y="116" font-family="'Space Mono', monospace" font-size="7" font-weight="bold" fill="#16172B">TIME-TO-DISCOVERY</text>
+    <text x="24" y="138" font-family="'Space Mono', monospace" font-size="11" font-weight="bold" fill="#2D7DA8">4h -> 9m</text>
+  </g>
+</svg>

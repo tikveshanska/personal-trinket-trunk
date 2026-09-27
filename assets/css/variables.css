@@ -1,0 +1,66 @@
+/* ==========================================================================
+   DESIGN TOKENS & VARIABLES
+   Portfolio OS Visual Identity System
+   ========================================================================== */
+
+:root {
+  /* Surface & Background Colors */
+  --bg-cream: #F2EAD8;            /* Primary background / desktop surface */
+  --bg-cream-alt: #EDE6CE;        /* Secondary panel background / texture layer */
+  --bg-cream-light: #FAF6EE;      /* Card & paper window interior */
+  --bg-card: #FDFBF7;             /* Clean readable card surface */
+  
+  /* Ink & Typography Colors */
+  --ink-navy: #16172B;            /* Primary ink, titles, window chrome text */
+  --ink-navy-soft: #2E3048;       /* High-contrast body text */
+  --ink-muted: #5E6075;           /* Secondary labels, metadata, captions */
+  --ink-faint: #8E90A2;           /* Subdued lines, dates, disabled state */
+  
+  /* OS Chrome & Borders */
+  --chrome-grey: #E4E1D8;         /* Window title bars, browser chrome frame */
+  --chrome-grey-light: #EFECE3;   /* Highlighted chrome surfaces */
+  --chrome-grey-dark: #D9D5C8;    /* Chrome borders, inset divider lines */
+  --chrome-border: #C8C3B3;       /* Outer window and frame borders */
+  --chrome-border-dark: #16172B;  /* Bold vintage comic/editorial border line */
+  
+  /* Accents */
+  --accent-teal: #6FAFB6;         /* Primary accent: links, focus, system pills */
+  --accent-teal-dark: #477E85;    /* Contrast teal for text & buttons */
+  --accent-teal-soft: #E0EFF1;    /* Light teal tint for tags and badges */
+  --accent-blue: #2D7DA8;         /* Secondary accent: media player, folders */
+  --accent-blue-soft: #C1DCED;    /* Soft folder tint */
+  --accent-red: #C1493B;          /* Stamps, highlight badges, close dots */
+  --accent-red-soft: #F9E5E3;     /* Light red tint for callouts */
+  --accent-yellow: #E5B842;       /* Post-it / warm highlight accent */
+
+  /* Window Traffic Lights */
+  --win-close: #EE5B5B;
+  --win-minimize: #F5BE4F;
+  --win-maximize: #62C554;
+  --win-border-dot: rgba(0, 0, 0, 0.2);
+
+  /* Typography */
+  --font-mono: 'Space Mono', 'Courier New', Courier, monospace;
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-script: 'Dancing Script', 'Brush Script MT', cursive;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Elevation & Shadows (Authentic retro paper + OS drop shadows) */
+  --shadow-sm: 2px 2px 0px rgba(22, 23, 43, 0.12);
+  --shadow-window: 5px 7px 0px rgba(22, 23, 43, 0.14), 0 16px 32px rgba(22, 23, 43, 0.08);
+  --shadow-window-active: 7px 11px 0px rgba(22, 23, 43, 0.22), 0 24px 44px rgba(22, 23, 43, 0.14);
+  --shadow-card: 3px 4px 0px rgba(22, 23, 43, 0.12), 0 6px 12px rgba(22, 23, 43, 0.04);
+  --shadow-card-hover: 5px 7px 0px rgba(22, 23, 43, 0.18), 0 12px 20px rgba(22, 23, 43, 0.08);
+
+  /* Dimensions */
+  --menu-height: 36px;
+  --radius-window: 8px;
+  --radius-card: 4px;
+  --radius-sm: 3px;
+
+  /* Transitions */
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  --ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+  --trans-fast: 0.15s ease;
+  --trans-normal: 0.25s var(--ease-smooth);
+}

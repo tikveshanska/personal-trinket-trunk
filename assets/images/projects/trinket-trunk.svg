@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <!-- Card Background -->
+  <rect width="400" height="250" fill="#EDE6CE"/>
+  
+  <!-- Subtle Grid lines -->
+  <line x1="20" y1="50" x2="380" y2="50" stroke="#D9D5C8" stroke-width="1"/>
+  <line x1="20" y1="100" x2="380" y2="100" stroke="#D9D5C8" stroke-width="1"/>
+  <line x1="20" y1="150" x2="380" y2="150" stroke="#D9D5C8" stroke-width="1"/>
+  <line x1="20" y1="200" x2="380" y2="200" stroke="#D9D5C8" stroke-width="1"/>
+  
+  <line x1="80" y1="20" x2="80" y2="230" stroke="#D9D5C8" stroke-width="1"/>
+  <line x1="160" y1="20" x2="160" y2="230" stroke="#D9D5C8" stroke-width="1"/>
+  <line x1="240" y1="20" x2="240" y2="230" stroke="#D9D5C8" stroke-width="1"/>
+  <line x1="320" y1="20" x2="320" y2="230" stroke="#D9D5C8" stroke-width="1"/>
+
+  <!-- Outer frame border -->
+  <rect x="15" y="15" width="370" height="220" fill="none" stroke="#16172B" stroke-width="1.5"/>
+
+  <!-- Desktop Window Mockup inside Thumbnail -->
+  <g transform="translate(45, 35)">
+    <!-- Window Shadow -->
+    <rect x="6" y="6" width="300" height="170" rx="4" fill="#16172B" opacity="0.15"/>
+    <!-- Window Frame -->
+    <rect width="300" height="170" rx="4" fill="#FAF6EE" stroke="#16172B" stroke-width="1.5"/>
+    <!-- Titlebar -->
+    <rect width="300" height="24" rx="4" fill="#E4E1D8" stroke="#16172B" stroke-width="1.5"/>
+    <circle cx="14" cy="12" r="3.5" fill="#EE5B5B"/>
+    <circle cx="26" cy="12" r="3.5" fill="#F5BE4F"/>
+    <circle cx="38" cy="12" r="3.5" fill="#62C554"/>
+    <text x="150" y="16" font-family="'Space Mono', monospace" font-size="9" fill="#16172B" text-anchor="middle">~/trinket-trunk.app</text>
+    
+    <!-- Mini UI Inside Window -->
+    <rect x="16" y="38" width="80" height="50" rx="2" fill="#EDE6CE" stroke="#16172B" stroke-width="1"/>
+    <circle cx="56" cy="58" r="10" fill="#6FAFB6"/>
+    <text x="56" y="80" font-family="'Space Mono', monospace" font-size="7" fill="#16172B" text-anchor="middle">KEEPSAKE #01</text>
+    
+    <rect x="110" y="38" width="174" height="50" rx="2" fill="#FFFFFF" stroke="#16172B" stroke-width="1"/>
+    <line x1="122" y1="52" x2="260" y2="52" stroke="#16172B" stroke-width="1.5"/>
+    <line x1="122" y1="62" x2="230" y2="62" stroke="#6FAFB6" stroke-width="1.5"/>
+    <line x1="122" y1="72" x2="190" y2="72" stroke="#D9D5C8" stroke-width="1.5"/>
+
+    <!-- Bottom Row items -->
+    <rect x="16" y="100" width="128" height="55" rx="2" fill="#FAF6EE" stroke="#16172B" stroke-width="1"/>
+    <text x="24" y="115" font-family="'Space Mono', monospace" font-size="7" font-weight="bold" fill="#16172B">RETENTION COHORT</text>
+    <rect x="24" y="122" width="112" height="6" rx="1" fill="#E4E1D8"/>
+    <rect x="24" y="122" width="76" height="6" rx="1" fill="#2D7DA8"/>
+    <text x="24" y="142" font-family="'Space Mono', monospace" font-size="8" font-weight="bold" fill="#2D7DA8">68% W4 RETENTION</text>
+
+    <rect x="156" y="100" width="128" height="55" rx="2" fill="#F2EAD8" stroke="#16172B" stroke-width="1"/>
+    <text x="164" y="115" font-family="'Space Mono', monospace" font-size="7" font-weight="bold" fill="#16172B">ARCHITECTURE</text>
+    <text x="164" y="129" font-family="'Space Mono', monospace" font-size="7" fill="#16172B">Zero-build static</text>
+    <text x="164" y="142" font-family="'Space Mono', monospace" font-size="8" font-weight="bold" fill="#C1493B">0ms SERVER OVERHEAD</text>
+  </g>
+</svg>

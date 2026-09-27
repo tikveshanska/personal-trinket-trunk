@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <!-- Card Background -->
+  <rect width="400" height="250" fill="#EDE6CE"/>
+  
+  <!-- Grid lines -->
+  <line x1="20" y1="50" x2="380" y2="50" stroke="#D9D5C8" stroke-width="1"/>
+  <line x1="20" y1="100" x2="380" y2="100" stroke="#D9D5C8" stroke-width="1"/>
+  <line x1="20" y1="150" x2="380" y2="150" stroke="#D9D5C8" stroke-width="1"/>
+  <line x1="20" y1="200" x2="380" y2="200" stroke="#D9D5C8" stroke-width="1"/>
+
+  <!-- Outer frame border -->
+  <rect x="15" y="15" width="370" height="220" fill="none" stroke="#16172B" stroke-width="1.5"/>
+
+  <!-- Marketplace Diagram -->
+  <g transform="translate(45, 35)">
+    <rect x="6" y="6" width="300" height="170" rx="4" fill="#16172B" opacity="0.15"/>
+    <rect width="300" height="170" rx="4" fill="#FAF6EE" stroke="#16172B" stroke-width="1.5"/>
+    <!-- Titlebar -->
+    <rect width="300" height="24" rx="4" fill="#E4E1D8" stroke="#16172B" stroke-width="1.5"/>
+    <circle cx="14" cy="12" r="3.5" fill="#EE5B5B"/>
+    <circle cx="26" cy="12" r="3.5" fill="#F5BE4F"/>
+    <circle cx="38" cy="12" r="3.5" fill="#62C554"/>
+    <text x="150" y="16" font-family="'Space Mono', monospace" font-size="9" fill="#16172B" text-anchor="middle">shelf-space.network — Local Exchange</text>
+
+    <!-- Visual network nodes: Store A <-> Store B -->
+    <rect x="20" y="44" width="75" height="50" rx="2" fill="#FFFFFF" stroke="#16172B" stroke-width="1.2"/>
+    <text x="57" y="62" font-family="'Space Mono', monospace" font-size="7" font-weight="bold" fill="#16172B" text-anchor="middle">STORE A</text>
+    <text x="57" y="78" font-family="'Space Mono', monospace" font-size="6.5" fill="#C1493B" text-anchor="middle">Out of stock</text>
+
+    <!-- Arrow / Courier connection -->
+    <path d="M100 68L190 68" stroke="#2D7DA8" stroke-width="2" stroke-dasharray="4 2"/>
+    <polygon points="190,68 184,65 184,71" fill="#2D7DA8"/>
+    <rect x="115" y="58" width="60" height="18" rx="2" fill="#FAF6EE" stroke="#2D7DA8" stroke-width="1"/>
+    <text x="145" y="70" font-family="'Space Mono', monospace" font-size="6" font-weight="bold" fill="#2D7DA8" text-anchor="middle">SAME-DAY</text>
+
+    <rect x="195" y="44" width="85" height="50" rx="2" fill="#FFFFFF" stroke="#16172B" stroke-width="1.2"/>
+    <text x="237" y="62" font-family="'Space Mono', monospace" font-size="7" font-weight="bold" fill="#16172B" text-anchor="middle">STORE B (0.8 mi)</text>
+    <text x="237" y="78" font-family="'Space Mono', monospace" font-size="6.5" fill="#6FAFB6" text-anchor="middle">2 copies in stock</text>
+
+    <!-- Bottom Metrics -->
+    <rect x="20" y="106" width="125" height="48" rx="2" fill="#EDE6CE" stroke="#16172B" stroke-width="1"/>
+    <text x="30" y="122" font-family="'Space Mono', monospace" font-size="6.5" font-weight="bold" fill="#16172B">FULFILLMENT UPLIFT</text>
+    <text x="30" y="142" font-family="'Space Mono', monospace" font-size="12" font-weight="bold" fill="#2D7DA8">+41% SAME-DAY</text>
+
+    <rect x="155" y="106" width="125" height="48" rx="2" fill="#EDE6CE" stroke="#16172B" stroke-width="1"/>
+    <text x="165" y="122" font-family="'Space Mono', monospace" font-size="6.5" font-weight="bold" fill="#16172B">PARTNER INDIE SHOPS</text>
+    <text x="165" y="142" font-family="'Space Mono', monospace" font-size="12" font-weight="bold" fill="#C1493B">12 PILOT STORES</text>
+  </g>
+</svg>

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tea Tikveshanska | Product Manager Portfolio</title>
+  <meta name="description" content="Product management portfolio showcasing digital product case studies, 0-to-1 execution, and intentional systems design.">
+
+  <!-- Google Fonts CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Relative Stylesheet Paths for GitHub Pages Compatibility -->
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Subtle Grain & Paper Overlay -->
+  <div class="paper-overlay" aria-hidden="true"></div>
+
+  <!-- Top System Menu Bar (OS Chrome) -->
+  <header class="top-menu-bar" role="banner">
+    <div class="menu-left">
+      <div class="system-logo" title="Tea.OS System v1.0">
+        <span class="star">✦</span>
+        <span>TEA.OS</span>
+      </div>
+
+      <nav class="menu-nav" aria-label="Desktop menu">
+        <!-- File Menu -->
+        <div class="menu-item">
+          <button class="menu-btn" aria-haspopup="true" aria-expanded="false">File</button>
+          <div class="menu-dropdown" role="menu">
+            <button class="dropdown-item" role="menuitem" data-action="open-about">
+              <span>About Candidate...</span>
+              <kbd>⌘A</kbd>
+            </button>
+            <button class="dropdown-item" role="menuitem" data-action="open-projects">
+              <span>Project Showcase...</span>
+              <kbd>⌘P</kbd>
+            </button>
+            <button class="dropdown-item" role="menuitem" data-action="open-resume">
+              <span>View Resume (PDF)...</span>
+              <kbd>⌘R</kbd>
+            </button>
+            <div class="dropdown-divider"></div>
+            <button class="dropdown-item" role="menuitem" data-action="open-contact">
+              <span>Contact & Email...</span>
+              <kbd>⌘C</kbd>
+            </button>
+            <div class="dropdown-divider"></div>
+            <button class="dropdown-item danger" role="menuitem" data-action="close-all">
+              <span>Close All Windows</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Edit Menu -->
+        <div class="menu-item">
+          <button class="menu-btn" aria-haspopup="true" aria-expanded="false">Edit</button>
+          <div class="menu-dropdown" role="menu">
+            <button class="dropdown-item" role="menuitem" onclick="navigator.clipboard?.writeText('tikveshanska@placeholder.com'); alert('Email address copied to clipboard! [PLACEHOLDER: Replace with your real email in data/projects or HTML]');">
+              <span>Copy Email Address</span>
+            </button>
+            <button class="dropdown-item" role="menuitem" data-action="reset-positions">
+              <span>Reset Windows Layout</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- View Menu -->
+        <div class="menu-item">
+          <button class="menu-btn" aria-haspopup="true" aria-expanded="false">View</button>
+          <div class="menu-dropdown" role="menu">
+            <button class="dropdown-item" role="menuitem" data-action="cascade-windows">
+              <span>Cascade Windows</span>
+            </button>
+            <button class="dropdown-item" role="menuitem" data-action="tile-windows">
+              <span>Tile Windows</span>
+            </button>
+            <div class="dropdown-divider"></div>
+            <button class="dropdown-item" role="menuitem" data-action="toggle-widget">
+              <span>Toggle System Widget</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Projects Menu -->
+        <div class="menu-item">
+          <button class="menu-btn" aria-haspopup="true" aria-expanded="false">Projects</button>
+          <div class="menu-dropdown" id="menu-projects-list" role="menu">
+            <!-- Dynamically populated from projects.json -->
+          </div>
+        </div>
+
+        <!-- Contact Menu -->
+        <div class="menu-item">
+          <button class="menu-btn" aria-haspopup="true" aria-expanded="false">Contact</button>
+          <div class="menu-dropdown" role="menu">
+            <a href="mailto:your-email@domain.com?subject=Product%20Management%20Inquiry" class="dropdown-item" role="menuitem">
+              <span>Send Direct Email ↗</span>
+            </a>
+            <a href="https://linkedin.com/in/yourname" target="_blank" rel="noopener noreferrer" class="dropdown-item" role="menuitem">
+              <span>LinkedIn Profile ↗</span>
+            </a>
+            <a href="https://github.com/tikveshanska" target="_blank" rel="noopener noreferrer" class="dropdown-item" role="menuitem">
+              <span>GitHub Profile ↗</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Active Window / Path Pill -->
+    <div class="menu-center" aria-live="polite">
+      <div class="active-window-pill">portfolio.os ~ /welcome</div>
+    </div>
+
+    <!-- Right System Indicators -->
+    <div class="menu-right">
+      <div class="status-badge" title="Status: Ready for PM Opportunities">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>OPEN FOR ROLES</span>
+      </div>
+      <time class="system-clock" aria-label="System clock">Sun Oct 16 11:28 AM</time>
+    </div>
+  </header>
+
+  <!-- Desktop Workspace Canvas -->
+  <main class="desktop-workspace" id="desktop">
+
+    <!-- 01. Left System Stats & Mixtape Widget (Moodboard Reference) -->
+    <aside class="system-widget" aria-label="System diagnostic widget">
+      <div class="widget-header">
+        <div class="widget-brand">
+          <img src="assets/icons/computer.svg" alt="Retro terminal icon" class="widget-icon" />
+          <span>SYS.DIAGNOSTICS</span>
+        </div>
+        <span class="widget-time">v1.0.4</span>
+      </div>
+
+      <div class="widget-stats">
+        <div class="stat-row">
+          <div class="stat-label-wrap">
+            <span>TARGET ROLE</span>
+            <span>PRODUCT MGR</span>
+          </div>
+          <div class="stat-bar"><div class="stat-bar-fill" style="width: 100%;"></div></div>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat-label-wrap">
+            <span>FOCUS</span>
+            <span>0-TO-1 &amp; UX</span>
+          </div>
+          <div class="stat-bar"><div class="stat-bar-fill accent-blue" style="width: 85%;"></div></div>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat-label-wrap">
+            <span>AGENCY</span>
+            <span>HIGH</span>
+          </div>
+          <div class="stat-bar"><div class="stat-bar-fill accent-red" style="width: 95%;"></div></div>
+        </div>
+      </div>
+
+      <!-- Mini Mixtape / Audio Snippet Player -->
+      <div class="widget-mixtape">
+        <div class="mixtape-track-info">
+          <span class="tape-icon" aria-hidden="true">📼</span>
+          <div class="tape-text">
+            <div class="tape-title">Product Mindset #01</div>
+            <div class="tape-artist">Intentional Trade-offs</div>
+          </div>
+        </div>
+        <div class="mixtape-controls">
+          <button class="tape-btn" id="btn-play-tape" aria-label="Toggle mixtape sound preview">▶ PLAY</button>
+          <div class="tape-visualizer" aria-hidden="true">
+            <div class="vis-bar"></div>
+            <div class="vis-bar"></div>
+            <div class="vis-bar"></div>
+            <div class="vis-bar"></div>
+            <div class="vis-bar"></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 02. Desktop Shortcuts Column (Right Side OS Icons) -->
+    <nav class="desktop-shortcuts" aria-label="Desktop shortcuts">
+      <button class="desktop-icon-btn selected" data-target-window="window-welcome" aria-label="Open Welcome note">
+        <img src="assets/icons/file-text.svg" alt="" class="desktop-icon-img" aria-hidden="true" />
+        <span class="desktop-icon-label">Welcome.txt</span>
+      </button>
+
+      <button class="desktop-icon-btn" data-target-window="window-about" aria-label="Open About Me window">
+        <img src="assets/icons/folder.svg" alt="" class="desktop-icon-img" aria-hidden="true" />
+        <span class="desktop-icon-label">About Me</span>
+      </button>
+
+      <button class="desktop-icon-btn" data-target-window="window-projects" aria-label="Open Project Showcase window">
+        <img src="assets/icons/folder.svg" alt="" class="desktop-icon-img" aria-hidden="true" />
+        <span class="desktop-icon-label">Projects</span>
+      </button>
+
+      <button class="desktop-icon-btn" data-target-window="window-resume" aria-label="Open Resume window">
+        <img src="assets/icons/pdf.svg" alt="" class="desktop-icon-img" aria-hidden="true" />
+        <span class="desktop-icon-label">Resume.pdf</span>
+      </button>
+
+      <button class="desktop-icon-btn" data-target-window="window-contact" aria-label="Open Contact window">
+        <img src="assets/icons/mail.svg" alt="" class="desktop-icon-img" aria-hidden="true" />
+        <span class="desktop-icon-label">Contact.eml</span>
+      </button>
+
+      <button class="desktop-icon-btn" data-target-project="personal-trinket-trunk" aria-label="Open Trinket Trunk Case Study">
+        <img src="assets/icons/stamp.svg" alt="" class="desktop-icon-img" aria-hidden="true" />
+        <span class="desktop-icon-label">Trinket Trunk</span>
+      </button>
+    </nav>
+
+    <!-- ====================================================================
+         WINDOW 01: WELCOME & SCRAPBOOK PHOTO WINDOW
+         ==================================================================== -->
+    <section class="os-window is-focused animate-in stagger-1" id="window-welcome" role="region" aria-labelledby="title-welcome">
+      <div class="window-titlebar">
+        <div class="window-controls">
+          <button class="win-btn win-close" title="Close" aria-label="Close window"></button>
+          <button class="win-btn win-minimize" title="Minimize" aria-label="Minimize window"></button>
+          <button class="win-btn win-maximize" title="Maximize" aria-label="Maximize window"></button>
+        </div>
+        <div class="window-title" id="title-welcome">
+          <span>🖼️</span>
+          <span>IMG_6780.HEIC</span>
+          <span class="window-title-meta">— Preview</span>
+        </div>
+        <div class="window-actions">
+          <span class="window-action-btn">100%</span>
+        </div>
+      </div>
+
+      <div class="window-body">
+        <div class="welcome-photo-frame">
+          <img src="assets/images/profile-portrait.jpg" alt="Tea Tikveshanska portrait" class="welcome-portrait" />
+          <div class="scrapbook-script-overlay">
+            <span class="script-greeting">Yep! That's Me.</span>
+            <span class="script-subgreeting">this is who you're dealing with (sorry not sorry)</span>
+          </div>
+        </div>
+
+        <p class="welcome-bio-blurb">
+          <strong>Hi, I'm Tea.</strong> Aspiring Product Manager bridging user empathy, technical pragmatism, and intentional design systems. I build digital tools that feel tactile, thoughtful, and human.
+        </p>
+
+        <div class="welcome-actions">
+          <button class="btn-primary" id="btn-explore-projects">
+            <span>Explore Projects</span>
+            <span>→</span>
+          </button>
+          <button class="btn-secondary" id="btn-explore-about">
+            <span>Read Bio</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         WINDOW 02: ABOUT ME WINDOW
+         ==================================================================== -->
+    <section class="os-window is-closed" id="window-about" role="region" aria-labelledby="title-about">
+      <div class="window-titlebar">
+        <div class="window-controls">
+          <button class="win-btn win-close" title="Close" aria-label="Close window"></button>
+          <button class="win-btn win-minimize" title="Minimize" aria-label="Minimize window"></button>
+          <button class="win-btn win-maximize" title="Maximize" aria-label="Maximize window"></button>
+        </div>
+        <div class="window-title" id="title-about">
+          <span>📄</span>
+          <span>about_me.txt</span>
+          <span class="window-title-meta">— TextEdit</span>
+        </div>
+        <div class="window-actions">
+          <span class="window-action-btn">UTF-8</span>
+        </div>
+      </div>
+
+      <div class="window-body">
+        <header class="editorial-header">
+          <span class="editorial-tag">Candidate Profile // Product Management</span>
+          <h1 class="editorial-title">Building Products with Intent, Craft &amp; Clarity</h1>
+          <p class="editorial-subtitle">Turning ambiguous problem spaces into crisp, validated software solutions.</p>
+        </header>
+
+        <div class="about-content-section">
+          <h2 class="section-label">01. What I'm Working Toward</h2>
+          <p class="about-text">
+            I am preparing to transition into a full-time <strong>Product Management</strong> role. My target sweet spot is early-stage (0-to-1) or product-led growth environments where intentional scoping, deep customer discovery, and fast execution matter more than bureaucratic red tape.
+          </p>
+          <div class="placeholder-callout">
+            <strong>[PLACEHOLDER: bio copy — target role details]</strong><br>
+            Insert your specific target industry (e.g. B2B SaaS, developer tooling, consumer apps, fintech) and geographic or remote preferences.
+          </div>
+        </div>
+
+        <div class="about-content-section">
+          <h2 class="section-label">02. Product Philosophy &amp; Solving Hard Problems</h2>
+          <p class="about-text">
+            Good product management is the discipline of making deliberate trade-offs. I believe that:
+          </p>
+          <ul class="about-text" style="padding-left: 18px; list-style: disc;">
+            <li><strong>Constraint breeds clarity:</strong> Shipping an opinionated, lean v1 teaches you more than debating an overbuilt spec for months.</li>
+            <li><strong>Empathy is quantitative and qualitative:</strong> Analytics tell you <em>where</em> users drop off; conversations tell you <em>why</em> they felt confused.</li>
+            <li><strong>Respect developer velocity:</strong> Engineering specs should be rigorous on problem definition, flexible on implementation mechanics.</li>
+          </ul>
+          <div class="placeholder-callout">
+            <strong>[PLACEHOLDER: bio copy — your personal story &amp; background]</strong><br>
+            Add 2-3 sentences about your previous professional background (e.g. design, engineering, business analysis, operations) and what sparked your drive toward PM.
+          </div>
+        </div>
+
+        <div class="about-content-section">
+          <h2 class="section-label">03. Core Competencies &amp; Toolkit</h2>
+          <div class="skills-grid">
+            <div class="skill-box">
+              <div class="skill-box-title">Product Discovery</div>
+              <div class="skill-box-desc">Customer interviews, JTBD frameworks, opportunity solution trees, assumption testing.</div>
+            </div>
+            <div class="skill-box">
+              <div class="skill-box-title">Roadmapping &amp; Scoping</div>
+              <div class="skill-box-desc">PRD writing, RICE/MoSCoW prioritization, release triage, MVP definition.</div>
+            </div>
+            <div class="skill-box">
+              <div class="skill-box-title">Execution &amp; Prototyping</div>
+              <div class="skill-box-desc">Figma wireframing, rapid HTML/CSS proof-of-concepts, user journey mapping.</div>
+            </div>
+            <div class="skill-box">
+              <div class="skill-box-title">Data &amp; Validation</div>
+              <div class="skill-box-desc">Funnel analytics, cohort retention, SQL basics, qualitative feedback loops.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-download-box">
+          <div class="resume-download-info">
+            <img src="assets/icons/pdf.svg" alt="" class="resume-file-icon" />
+            <div>
+              <div style="font-weight: 700; font-size: 12px;">Tea_Tikveshanska_PM_Resume.pdf</div>
+              <div style="font-size: 10px; color: var(--ink-muted);">[PLACEHOLDER: Attach your real resume file]</div>
+            </div>
+          </div>
+          <button class="btn-primary" onclick="alert('Download link placeholder: Replace with your actual PDF resume in portfolio-site/assets/!');">
+            Download PDF
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         WINDOW 03: PROJECT SHOWCASE (POSTCARD GRID)
+         ==================================================================== -->
+    <section class="os-window is-closed" id="window-projects" role="region" aria-labelledby="title-projects">
+      <div class="window-titlebar">
+        <div class="window-controls">
+          <button class="win-btn win-close" title="Close" aria-label="Close window"></button>
+          <button class="win-btn win-minimize" title="Minimize" aria-label="Minimize window"></button>
+          <button class="win-btn win-maximize" title="Maximize" aria-label="Maximize window"></button>
+        </div>
+        <div class="window-title" id="title-projects">
+          <span>📁</span>
+          <span>~/projects</span>
+          <span class="window-title-meta">— Showcase &amp; Case Studies</span>
+        </div>
+        <div class="window-actions">
+          <span class="window-action-btn">4 Items</span>
+        </div>
+      </div>
+
+      <div class="window-body">
+        <!-- Filter Bar -->
+        <div class="projects-filter-bar">
+          <span style="font-size: 11px; font-weight: 700; color: var(--ink-muted);">FILTER:</span>
+          <button class="filter-tag-btn active" data-tag="all">All (4)</button>
+          <button class="filter-tag-btn" data-tag="case-study">Case Studies</button>
+          <button class="filter-tag-btn" data-tag="0-to-1">0-to-1</button>
+          <button class="filter-tag-btn" data-tag="b2c">B2C</button>
+          <button class="filter-tag-btn" data-tag="b2b">B2B / SaaS</button>
+        </div>
+
+        <!-- Postcard Project Cards Grid -->
+        <div class="postcard-grid" id="projects-grid">
+          <!-- Dynamically populated via main.js from data/projects.json -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         WINDOW 04: PROJECT CASE STUDY DETAIL (BROWSER CHROME)
+         ==================================================================== -->
+    <section class="os-window is-closed" id="window-case-study" role="region" aria-labelledby="case-study-title">
+      <div class="window-titlebar">
+        <div class="window-controls">
+          <button class="win-btn win-close" title="Close" aria-label="Close window"></button>
+          <button class="win-btn win-minimize" title="Minimize" aria-label="Minimize window"></button>
+          <button class="win-btn win-maximize" title="Maximize" aria-label="Maximize window"></button>
+        </div>
+        <div class="window-title">
+          <span>🌐</span>
+          <span>Browser Preview</span>
+          <span class="window-title-meta">— Web Navigator</span>
+        </div>
+        <div class="window-actions">
+          <span class="window-action-btn">SSL Secured</span>
+        </div>
+      </div>
+
+      <!-- Browser Address Bar (Section 4 & 5 Chrome Motif) -->
+      <div class="browser-chrome-bar">
+        <button class="browser-nav-btn" id="case-study-back-btn" title="Back to Projects Showcase">← Back</button>
+        <button class="browser-nav-btn" title="Reload">↻</button>
+        
+        <div class="browser-url-input-wrap">
+          <span class="lock-icon" aria-hidden="true">🔒</span>
+          <span class="browser-url-text" id="case-study-url-display">https://tikveshanska.github.io/personal-trinket-trunk</span>
+        </div>
+
+        <div class="browser-action-links">
+          <a href="#" id="case-study-launch-btn" class="btn-launch" target="_blank" rel="noopener noreferrer">
+            <span>Launch Live App</span>
+            <span>↗</span>
+          </a>
+          <a href="#" id="case-study-repo-btn" class="btn-repo" target="_blank" rel="noopener noreferrer">
+            <span>GitHub</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Case Study Body -->
+      <div class="window-body">
+        <article class="case-study-article">
+          <header class="case-study-hero">
+            <div class="case-study-badges" id="case-study-tags"></div>
+            <h2 class="case-study-title" id="case-study-title">Project Case Study</h2>
+            <p class="case-study-summary" id="case-study-summary"></p>
+            <div class="case-study-metrics-row" id="case-study-metrics"></div>
+          </header>
+
+          <section class="case-study-section">
+            <h3><span class="step-num">01</span> The Problem &amp; Context</h3>
+            <p id="case-study-problem"></p>
+          </section>
+
+          <section class="case-study-section">
+            <h3><span class="step-num">02</span> My Role &amp; Team Leadership</h3>
+            <p id="case-study-role"></p>
+          </section>
+
+          <section class="case-study-section">
+            <h3><span class="step-num">03</span> Discovery, Hypotheses &amp; Validation</h3>
+            <p id="case-study-discovery"></p>
+          </section>
+
+          <section class="case-study-section">
+            <h3><span class="step-num">04</span> Key Product Decisions &amp; Trade-offs</h3>
+            <p id="case-study-decisions"></p>
+          </section>
+
+          <section class="case-study-section">
+            <h3><span class="step-num">05</span> Outcome, Metrics &amp; Learnings</h3>
+            <p id="case-study-outcome"></p>
+          </section>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         WINDOW 05: CONTACT WINDOW (AIRMAIL ENVELOPE)
+         ==================================================================== -->
+    <section class="os-window is-closed" id="window-contact" role="region" aria-labelledby="title-contact">
+      <div class="window-titlebar">
+        <div class="window-controls">
+          <button class="win-btn win-close" title="Close" aria-label="Close window"></button>
+          <button class="win-btn win-minimize" title="Minimize" aria-label="Minimize window"></button>
+          <button class="win-btn win-maximize" title="Maximize" aria-label="Maximize window"></button>
+        </div>
+        <div class="window-title" id="title-contact">
+          <span>✉️</span>
+          <span>contact.eml</span>
+          <span class="window-title-meta">— Compose</span>
+        </div>
+        <div class="window-actions">
+          <span class="window-action-btn">Draft</span>
+        </div>
+      </div>
+
+      <!-- Airmail Border -->
+      <div class="airmail-stripe-bar" aria-hidden="true"></div>
+
+      <div class="window-body">
+        <div class="contact-meta-table">
+          <div class="contact-meta-row">
+            <span class="contact-meta-key">To:</span>
+            <span class="contact-meta-val">Tea Tikveshanska &lt;[PLACEHOLDER: your-email@domain.com]&gt;</span>
+          </div>
+          <div class="contact-meta-row">
+            <span class="contact-meta-key">Subject:</span>
+            <span class="contact-meta-val">Coffee chat / Product Management opportunity</span>
+          </div>
+          <div class="contact-meta-row">
+            <span class="contact-meta-key">Location:</span>
+            <span class="contact-meta-val">[PLACEHOLDER: Your Location / Remote / Open to Relocation]</span>
+          </div>
+        </div>
+
+        <p class="about-text">
+          I'm always excited to discuss product strategy, 0-to-1 challenges, or new full-time PM opportunities. Feel free to shoot me an email or connect on professional channels:
+        </p>
+
+        <div style="margin: 16px 0;">
+          <a href="mailto:your-email@domain.com?subject=Hello%20Tea%20-%20PM%20Opportunity" class="btn-primary" style="width: 100%; justify-content: center; padding: 10px;">
+            <span>✉️ Send Email to [PLACEHOLDER: your-email@domain.com]</span>
+          </a>
+        </div>
+
+        <div class="contact-channels-grid">
+          <a href="https://linkedin.com/in/yourname" target="_blank" rel="noopener noreferrer" class="channel-btn">
+            <span class="channel-icon">💼</span>
+            <div>
+              <div>LinkedIn</div>
+              <div style="font-size: 9.5px; color: var(--ink-muted);">[PLACEHOLDER: linkedin profile]</div>
+            </div>
+          </a>
+
+          <a href="https://github.com/tikveshanska" target="_blank" rel="noopener noreferrer" class="channel-btn">
+            <span class="channel-icon">🐙</span>
+            <div>
+              <div>GitHub</div>
+              <div style="font-size: 9.5px; color: var(--ink-muted);">@tikveshanska</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         WINDOW 06: RESUME PREVIEW WINDOW
+         ==================================================================== -->
+    <section class="os-window is-closed" id="window-resume" role="region" aria-labelledby="title-resume">
+      <div class="window-titlebar">
+        <div class="window-controls">
+          <button class="win-btn win-close" title="Close" aria-label="Close window"></button>
+          <button class="win-btn win-minimize" title="Minimize" aria-label="Minimize window"></button>
+          <button class="win-btn win-maximize" title="Maximize" aria-label="Maximize window"></button>
+        </div>
+        <div class="window-title" id="title-resume">
+          <span>📑</span>
+          <span>resume_preview.pdf</span>
+          <span class="window-title-meta">— Document Viewer</span>
+        </div>
+        <div class="window-actions">
+          <span class="window-action-btn">Page 1 of 1</span>
+        </div>
+      </div>
+
+      <div class="window-body">
+        <header class="editorial-header">
+          <span class="editorial-tag">Curriculum Vitae</span>
+          <h2 class="editorial-title">Tea Tikveshanska</h2>
+          <p class="editorial-subtitle">Product Manager &amp; Builder | [PLACEHOLDER: Target Locations / Remote]</p>
+        </header>
+
+        <div class="about-content-section">
+          <h3 class="section-label">Experience &amp; Career Trajectory</h3>
+
+          <div class="resume-timeline-item">
+            <div class="timeline-role">Product Lead / Founder [PLACEHOLDER: Your Role]</div>
+            <div class="timeline-company">Personal Trinket Trunk &amp; Side Ventures • 2025 – Present</div>
+            <p class="timeline-desc">
+              Scoped, built, and launched user-facing digital applications from 0 to 1. Conducted user interviews, defined technical constraints, and designed tactile web interfaces with high retention cohorts.
+            </p>
+          </div>
+
+          <div class="resume-timeline-item">
+            <div class="timeline-role">[PLACEHOLDER: Previous Role — e.g. Associate PM / Business Analyst / Designer]</div>
+            <div class="timeline-company">[PLACEHOLDER: Company Name] • 2023 – 2025</div>
+            <p class="timeline-desc">
+              [PLACEHOLDER: 2-3 bullet points describing your impact, cross-functional collaboration with engineering and design, and metrics moved.]
+            </p>
+          </div>
+
+          <div class="resume-timeline-item">
+            <div class="timeline-role">[PLACEHOLDER: Education / Degree]</div>
+            <div class="timeline-company">[PLACEHOLDER: University / Program] • Graduated 2023</div>
+            <p class="timeline-desc">
+              [PLACEHOLDER: Relevant coursework — e.g. Human-Computer Interaction, Systems Engineering, Economics]
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px; text-align: center;">
+          <button class="btn-primary" onclick="alert('Resume PDF download placeholder: Add your real PDF file to assets/!');">
+            Download Complete PDF Resume ↗
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Application Scripts -->
+  <script src="assets/js/window-manager.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
