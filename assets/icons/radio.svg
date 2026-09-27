@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Retro tape / cassette icon for Currently -->
+  <rect x="8" y="16" width="48" height="32" rx="3" fill="#6FAFB6" stroke="#16172B" stroke-width="2.5"/>
+  <rect x="14" y="22" width="36" height="20" rx="2" fill="#FAF6EE" stroke="#16172B" stroke-width="1.5"/>
+  <circle cx="23" cy="32" r="5" fill="#FAF6EE" stroke="#16172B" stroke-width="2"/>
+  <circle cx="41" cy="32" r="5" fill="#FAF6EE" stroke="#16172B" stroke-width="2"/>
+  <line x1="28" y1="30" x2="36" y2="30" stroke="#16172B" stroke-width="1.5"/>
+  <line x1="28" y1="34" x2="36" y2="34" stroke="#16172B" stroke-width="1.5"/>
+  <circle cx="23" cy="32" r="2" fill="#16172B"/>
+  <circle cx="41" cy="32" r="2" fill="#16172B"/>
+</svg>

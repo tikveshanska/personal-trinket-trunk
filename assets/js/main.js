@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const minutes = String(now.getMinutes()).padStart(2, '0');
     const ampm = hours >= 12 ? 'PM' : 'AM';
     hours = hours % 12;
-    hours = hours ? hours : 12; // 0 becomes 12
+    hours = hours ? hours : 12;
     const hoursStr = String(hours).padStart(2, '0');
 
     clockEl.textContent = `${dayName} ${monthName} ${dayNum}  ${hoursStr}:${minutes} ${ampm}`;
@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Project Data & Rendering
   let projectsData = [];
 
-  // Embedded default fallback so site works perfectly when opened locally via file:///
   const fallbackProjects = [
     {
       "id": "personal-trinket-trunk",
@@ -110,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
-  // Load from data/projects.json with fallback
   fetch('data/projects.json')
     .then(res => {
       if (!res.ok) throw new Error('Failed to load JSON');
@@ -128,7 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
       populateProjectsMenu(projectsData);
     });
 
-  // Render Postcard Grid
   const gridContainer = document.getElementById('projects-grid');
   function renderProjects(projects, filterTag = 'all') {
     if (!gridContainer) return;
@@ -145,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
       card.setAttribute('role', 'button');
       card.setAttribute('aria-label', `View case study for ${p.title}`);
 
-      // Postcard markup
       const tagsHtml = (p.tags || []).map(t => `<span class="postcard-tag">${t}</span>`).join('');
       const refNum = `REF: PRJ-0${idx + 1} // 2026`;
 
@@ -166,7 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
 
-      // Click card to open Case Study window
       card.addEventListener('click', () => openCaseStudy(p));
       card.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -179,7 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Populate dynamic items in Top Menu -> Projects
   function populateProjectsMenu(projects) {
     const menuList = document.getElementById('menu-projects-list');
     if (!menuList) return;
@@ -188,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
     projects.forEach(p => {
       const btn = document.createElement('button');
       btn.className = 'dropdown-item';
-      btn.innerHTML = `<span>${p.title}</span> <span style="color: var(--accent-red); font-size: 10px;">Case Study</span>`;
+      btn.innerHTML = `<span>${p.title}</span> <span style="color: var(--accent-teal-dark); font-weight: 700; font-size: 10px;">Case Study</span>`;
       btn.addEventListener('click', () => {
         openCaseStudy(p);
         closeAllDropdowns();
@@ -210,7 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
     menuList.appendChild(viewAllBtn);
   }
 
-  // Project Tag Filters
   const filterBtns = document.querySelectorAll('.filter-tag-btn');
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -226,13 +219,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function openCaseStudy(project) {
     if (!caseStudyWin) return;
 
-    // Browser chrome elements
     const urlDisplay = document.getElementById('case-study-url-display');
     const launchBtn = document.getElementById('case-study-launch-btn');
     const repoBtn = document.getElementById('case-study-repo-btn');
     const backBtn = document.getElementById('case-study-back-btn');
 
-    // Content elements
     const titleEl = document.getElementById('case-study-title');
     const tagsContainer = document.getElementById('case-study-tags');
     const summaryEl = document.getElementById('case-study-summary');
@@ -243,7 +234,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const decisionsEl = document.getElementById('case-study-decisions');
     const outcomeEl = document.getElementById('case-study-outcome');
 
-    // Fill data
     if (urlDisplay) urlDisplay.textContent = project.liveUrl;
     if (launchBtn) {
       launchBtn.href = project.liveUrl;
@@ -275,14 +265,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (decisionsEl) decisionsEl.textContent = project.decisions || "Prioritized core MVP features, managed technical scope trade-offs [PLACEHOLDER: Key Decisions].";
     if (outcomeEl) outcomeEl.textContent = project.outcome;
 
-    // Tags
     if (tagsContainer) {
       tagsContainer.innerHTML = (project.tags || [])
         .map(t => `<span class="postcard-tag">${t}</span>`)
         .join('');
     }
 
-    // Metrics Chips
     if (metricsContainer) {
       const metrics = project.metrics || ["Key Metric [PLACEHOLDER]", "Impact [PLACEHOLDER]"];
       metricsContainer.innerHTML = metrics
@@ -290,7 +278,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .join('');
     }
 
-    // Open and focus window
     wm.openWindow('window-case-study');
   }
 
@@ -300,23 +287,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const targetWinId = iconBtn.getAttribute('data-target-window');
     const targetProject = iconBtn.getAttribute('data-target-project');
 
-    // Selection styling on click
     iconBtn.addEventListener('click', (e) => {
       desktopIcons.forEach(i => i.classList.remove('selected'));
       iconBtn.classList.add('selected');
 
-      // On small screens or single-click, open immediately
       if (window.innerWidth <= 960) {
         openTarget();
       }
     });
 
-    // Double-click to open window (classic OS metaphor)
     iconBtn.addEventListener('dblclick', () => {
       openTarget();
     });
 
-    // Keyboard trigger
     iconBtn.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         openTarget();
@@ -337,7 +320,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Deselect desktop icons when clicking empty canvas
   document.querySelector('.desktop-workspace').addEventListener('click', (e) => {
     if (!e.target.closest('.desktop-icon-btn') && !e.target.closest('.os-window') && !e.target.closest('.top-menu-bar')) {
       desktopIcons.forEach(i => i.classList.remove('selected'));
@@ -362,18 +344,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Close dropdowns on outside click
   document.addEventListener('click', () => {
     closeAllDropdowns();
   });
 
-  // Global Dropdown Item Action Delegation
   document.querySelectorAll('[data-action]').forEach(actionBtn => {
     actionBtn.addEventListener('click', (e) => {
       const action = actionBtn.getAttribute('data-action');
       closeAllDropdowns();
 
       switch (action) {
+        case 'open-welcome':
+          wm.openWindow('window-welcome');
+          break;
+        case 'open-currently':
+          wm.openWindow('window-currently');
+          break;
         case 'open-about':
           wm.openWindow('window-about');
           break;
@@ -398,17 +384,10 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'close-all':
           wm.closeAllWindows();
           break;
-        case 'toggle-widget':
-          const widget = document.querySelector('.system-widget');
-          if (widget) {
-            widget.style.display = widget.style.display === 'none' ? 'block' : 'none';
-          }
-          break;
       }
     });
   });
 
-  // Quick Action Buttons inside Welcome Window
   const welcomeExploreBtn = document.getElementById('btn-explore-projects');
   if (welcomeExploreBtn) {
     welcomeExploreBtn.addEventListener('click', () => wm.openWindow('window-projects'));
@@ -419,9 +398,9 @@ document.addEventListener('DOMContentLoaded', () => {
     welcomeAboutBtn.addEventListener('click', () => wm.openWindow('window-about'));
   }
 
-  // 7. Mixtape Player Toggle (Retro Audio Widget)
+  // 7. Mixtape Player in Currently Pop-Up
   const tapeBtn = document.getElementById('btn-play-tape');
-  const tapeContainer = document.querySelector('.widget-mixtape');
+  const tapeContainer = document.querySelector('.mixtape-card');
   if (tapeBtn && tapeContainer) {
     let isPlaying = false;
     tapeBtn.addEventListener('click', () => {
@@ -438,12 +417,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 8. Staggered Entrance of Initial Windows on Desktop
   if (window.innerWidth > 960) {
-    // Bring Welcome Window to front
     const welcomeObj = wm.windows.find(w => w.id === 'window-welcome');
+    const currentlyObj = wm.windows.find(w => w.id === 'window-currently');
+    
+    // Focus welcome window while keeping currently open alongside it
     if (welcomeObj) {
       setTimeout(() => {
         wm.focusWindow(welcomeObj);
-      }, 100);
+      }, 150);
     }
   }
 });

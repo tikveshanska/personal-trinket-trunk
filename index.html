@@ -20,7 +20,7 @@
   <!-- Subtle Grain & Paper Overlay -->
   <div class="paper-overlay" aria-hidden="true"></div>
 
-  <!-- Top System Menu Bar (OS Chrome) -->
+  <!-- Top System Menu Bar (OS Chrome with Rich Teal Accents) -->
   <header class="top-menu-bar" role="banner">
     <div class="menu-left">
       <div class="system-logo" title="Tea.OS System v1.0">
@@ -33,6 +33,14 @@
         <div class="menu-item">
           <button class="menu-btn" aria-haspopup="true" aria-expanded="false">File</button>
           <div class="menu-dropdown" role="menu">
+            <button class="dropdown-item" role="menuitem" data-action="open-welcome">
+              <span>Welcome Photo...</span>
+              <kbd>⌘W</kbd>
+            </button>
+            <button class="dropdown-item" role="menuitem" data-action="open-currently">
+              <span>Currently (Music &amp; Fixations)...</span>
+              <kbd>⌘U</kbd>
+            </button>
             <button class="dropdown-item" role="menuitem" data-action="open-about">
               <span>About Candidate...</span>
               <kbd>⌘A</kbd>
@@ -47,7 +55,7 @@
             </button>
             <div class="dropdown-divider"></div>
             <button class="dropdown-item" role="menuitem" data-action="open-contact">
-              <span>Contact & Email...</span>
+              <span>Contact &amp; Email...</span>
               <kbd>⌘C</kbd>
             </button>
             <div class="dropdown-divider"></div>
@@ -81,8 +89,8 @@
               <span>Tile Windows</span>
             </button>
             <div class="dropdown-divider"></div>
-            <button class="dropdown-item" role="menuitem" data-action="toggle-widget">
-              <span>Toggle System Widget</span>
+            <button class="dropdown-item" role="menuitem" data-action="open-currently">
+              <span>Toggle Currently Pop-up</span>
             </button>
           </div>
         </div>
@@ -131,69 +139,16 @@
   <!-- Desktop Workspace Canvas -->
   <main class="desktop-workspace" id="desktop">
 
-    <!-- 01. Left System Stats & Mixtape Widget (Moodboard Reference) -->
-    <aside class="system-widget" aria-label="System diagnostic widget">
-      <div class="widget-header">
-        <div class="widget-brand">
-          <img src="assets/icons/computer.svg" alt="Retro terminal icon" class="widget-icon" />
-          <span>SYS.DIAGNOSTICS</span>
-        </div>
-        <span class="widget-time">v1.0.4</span>
-      </div>
-
-      <div class="widget-stats">
-        <div class="stat-row">
-          <div class="stat-label-wrap">
-            <span>TARGET ROLE</span>
-            <span>PRODUCT MGR</span>
-          </div>
-          <div class="stat-bar"><div class="stat-bar-fill" style="width: 100%;"></div></div>
-        </div>
-
-        <div class="stat-row">
-          <div class="stat-label-wrap">
-            <span>FOCUS</span>
-            <span>0-TO-1 &amp; UX</span>
-          </div>
-          <div class="stat-bar"><div class="stat-bar-fill accent-blue" style="width: 85%;"></div></div>
-        </div>
-
-        <div class="stat-row">
-          <div class="stat-label-wrap">
-            <span>AGENCY</span>
-            <span>HIGH</span>
-          </div>
-          <div class="stat-bar"><div class="stat-bar-fill accent-red" style="width: 95%;"></div></div>
-        </div>
-      </div>
-
-      <!-- Mini Mixtape / Audio Snippet Player -->
-      <div class="widget-mixtape">
-        <div class="mixtape-track-info">
-          <span class="tape-icon" aria-hidden="true">📼</span>
-          <div class="tape-text">
-            <div class="tape-title">Product Mindset #01</div>
-            <div class="tape-artist">Intentional Trade-offs</div>
-          </div>
-        </div>
-        <div class="mixtape-controls">
-          <button class="tape-btn" id="btn-play-tape" aria-label="Toggle mixtape sound preview">▶ PLAY</button>
-          <div class="tape-visualizer" aria-hidden="true">
-            <div class="vis-bar"></div>
-            <div class="vis-bar"></div>
-            <div class="vis-bar"></div>
-            <div class="vis-bar"></div>
-            <div class="vis-bar"></div>
-          </div>
-        </div>
-      </div>
-    </aside>
-
-    <!-- 02. Desktop Shortcuts Column (Right Side OS Icons) -->
+    <!-- Desktop Shortcuts Column (Right Side OS Icons) -->
     <nav class="desktop-shortcuts" aria-label="Desktop shortcuts">
       <button class="desktop-icon-btn selected" data-target-window="window-welcome" aria-label="Open Welcome note">
         <img src="assets/icons/file-text.svg" alt="" class="desktop-icon-img" aria-hidden="true" />
         <span class="desktop-icon-label">Welcome.txt</span>
+      </button>
+
+      <button class="desktop-icon-btn" data-target-window="window-currently" aria-label="Open Currently pop-up">
+        <img src="assets/icons/radio.svg" alt="" class="desktop-icon-img" aria-hidden="true" />
+        <span class="desktop-icon-label">Currently.txt</span>
       </button>
 
       <button class="desktop-icon-btn" data-target-window="window-about" aria-label="Open About Me window">
@@ -224,35 +179,46 @@
 
     <!-- ====================================================================
          WINDOW 01: WELCOME & SCRAPBOOK PHOTO WINDOW
+         Features Tea's portrait from personal-info folder and Windows UI controls
          ==================================================================== -->
     <section class="os-window is-focused animate-in stagger-1" id="window-welcome" role="region" aria-labelledby="title-welcome">
       <div class="window-titlebar">
+        <div class="window-title-group">
+          <span class="window-icon">🖼️</span>
+          <span class="window-title" id="title-welcome">IMG_8662.HEIC</span>
+          <span class="window-title-meta">— Photo Preview</span>
+        </div>
+        <!-- Windows-Style Controls: Minimize, Expand Arrow, Close X -->
         <div class="window-controls">
-          <button class="win-btn win-close" title="Close" aria-label="Close window"></button>
-          <button class="win-btn win-minimize" title="Minimize" aria-label="Minimize window"></button>
-          <button class="win-btn win-maximize" title="Maximize" aria-label="Maximize window"></button>
-        </div>
-        <div class="window-title" id="title-welcome">
-          <span>🖼️</span>
-          <span>IMG_6780.HEIC</span>
-          <span class="window-title-meta">— Preview</span>
-        </div>
-        <div class="window-actions">
-          <span class="window-action-btn">100%</span>
+          <button class="win-btn win-minimize" title="Minimize" aria-label="Minimize window">
+            <svg viewBox="0 0 10 10" width="10" height="10"><line x1="1" y1="8" x2="9" y2="8" stroke="currentColor" stroke-width="1.8"/></svg>
+          </button>
+          <button class="win-btn win-maximize" title="Expand view" aria-label="Maximize window">
+            <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 1h4v4M11 1L6 6M5 11H1V7M1 11l5-5"/>
+            </svg>
+          </button>
+          <button class="win-btn win-close" title="Close" aria-label="Close window">
+            <svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <line x1="1.5" y1="1.5" x2="8.5" y2="8.5"/>
+              <line x1="8.5" y1="1.5" x2="1.5" y2="8.5"/>
+            </svg>
+          </button>
         </div>
       </div>
 
       <div class="window-body">
         <div class="welcome-photo-frame">
+          <!-- Converted image from personal-info/IMG_8662.HEIC -->
           <img src="assets/images/profile-portrait.jpg" alt="Tea Tikveshanska portrait" class="welcome-portrait" />
           <div class="scrapbook-script-overlay">
-            <span class="script-greeting">Yep! That's Me.</span>
-            <span class="script-subgreeting">this is who you're dealing with (sorry not sorry)</span>
+            <span class="script-greeting">Tea Tikveshanska</span>
+            <span class="script-subgreeting">that's me — product manager &amp; builder</span>
           </div>
         </div>
 
         <p class="welcome-bio-blurb">
-          <strong>Hi, I'm Tea.</strong> Aspiring Product Manager bridging user empathy, technical pragmatism, and intentional design systems. I build digital tools that feel tactile, thoughtful, and human.
+          <strong>Hi, I'm Tea.</strong> Aspiring Product Manager bridging user empathy, technical pragmatism, and intentional design systems. I build digital products that feel tactile, thoughtful, and human.
         </p>
 
         <div class="welcome-actions">
@@ -268,22 +234,120 @@
     </section>
 
     <!-- ====================================================================
-         WINDOW 02: ABOUT ME WINDOW
+         WINDOW 02: CURRENTLY POP-UP WINDOW
+         Contains: Music, Current Fixation, A Recommendation (with placeholders)
+         ==================================================================== -->
+    <section class="os-window animate-in stagger-2" id="window-currently" role="region" aria-labelledby="title-currently">
+      <div class="window-titlebar">
+        <div class="window-title-group">
+          <span class="window-icon">🎧</span>
+          <span class="window-title" id="title-currently">currently.txt</span>
+          <span class="window-title-meta">— Status &amp; Inputs</span>
+        </div>
+        <!-- Windows-Style Controls -->
+        <div class="window-controls">
+          <button class="win-btn win-minimize" title="Minimize" aria-label="Minimize window">
+            <svg viewBox="0 0 10 10" width="10" height="10"><line x1="1" y1="8" x2="9" y2="8" stroke="currentColor" stroke-width="1.8"/></svg>
+          </button>
+          <button class="win-btn win-maximize" title="Expand view" aria-label="Maximize window">
+            <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 1h4v4M11 1L6 6M5 11H1V7M1 11l5-5"/>
+            </svg>
+          </button>
+          <button class="win-btn win-close" title="Close" aria-label="Close window">
+            <svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <line x1="1.5" y1="1.5" x2="8.5" y2="8.5"/>
+              <line x1="8.5" y1="1.5" x2="1.5" y2="8.5"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="window-body">
+        <!-- 01. MUSIC -->
+        <div class="currently-section">
+          <div class="currently-section-header">
+            <span class="currently-tag">01 // MUSIC</span>
+            <span class="currently-indicator">● ON REPEAT</span>
+          </div>
+          <div class="currently-card mixtape-card">
+            <div class="mixtape-track-info">
+              <span class="tape-icon" aria-hidden="true">📼</span>
+              <div class="tape-text">
+                <div class="tape-title">[PLACEHOLDER: Oasis — Wonderwall (Remastered)]</div>
+                <div class="tape-artist">[PLACEHOLDER: Acoustic / Britpop / Afternoon Focus]</div>
+              </div>
+            </div>
+            <div class="mixtape-controls">
+              <button class="tape-btn" id="btn-play-tape" aria-label="Toggle music preview">▶ PLAY</button>
+              <div class="tape-visualizer" aria-hidden="true">
+                <div class="vis-bar"></div>
+                <div class="vis-bar"></div>
+                <div class="vis-bar"></div>
+                <div class="vis-bar"></div>
+                <div class="vis-bar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02. CURRENT FIXATION -->
+        <div class="currently-section">
+          <div class="currently-section-header">
+            <span class="currently-tag">02 // CURRENT FIXATION</span>
+            <span class="currently-indicator">★ HYPERFOCUS</span>
+          </div>
+          <div class="currently-card fixation-card">
+            <div class="currently-card-title">[PLACEHOLDER: Tactile Digital Systems &amp; Local-First Architecture]</div>
+            <p class="currently-card-body">
+              [PLACEHOLDER: Exploring how software can borrow the sensory feedback of physical paper, analog audio gear, and classic desktop environments without sacrificing modern responsiveness.]
+            </p>
+          </div>
+        </div>
+
+        <!-- 03. A RECOMMENDATION -->
+        <div class="currently-section">
+          <div class="currently-section-header">
+            <span class="currently-tag">03 // A RECOMMENDATION</span>
+            <span class="currently-indicator">✦ WORTH YOUR TIME</span>
+          </div>
+          <div class="currently-card recommendation-card">
+            <div class="currently-card-title">[PLACEHOLDER: "The Design of Everyday Things" — Don Norman]</div>
+            <div class="currently-card-sub">[PLACEHOLDER: Foundational Book on Human-Centered Design]</div>
+            <p class="currently-card-body">
+              [PLACEHOLDER: A masterclass in intuitive affordances and conceptual models. Essential reading for every product builder who wants to eliminate cognitive friction for users.]
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         WINDOW 03: ABOUT ME WINDOW
          ==================================================================== -->
     <section class="os-window is-closed" id="window-about" role="region" aria-labelledby="title-about">
       <div class="window-titlebar">
-        <div class="window-controls">
-          <button class="win-btn win-close" title="Close" aria-label="Close window"></button>
-          <button class="win-btn win-minimize" title="Minimize" aria-label="Minimize window"></button>
-          <button class="win-btn win-maximize" title="Maximize" aria-label="Maximize window"></button>
-        </div>
-        <div class="window-title" id="title-about">
-          <span>📄</span>
-          <span>about_me.txt</span>
+        <div class="window-title-group">
+          <span class="window-icon">📄</span>
+          <span class="window-title" id="title-about">about_me.txt</span>
           <span class="window-title-meta">— TextEdit</span>
         </div>
-        <div class="window-actions">
-          <span class="window-action-btn">UTF-8</span>
+        <!-- Windows-Style Controls -->
+        <div class="window-controls">
+          <button class="win-btn win-minimize" title="Minimize" aria-label="Minimize window">
+            <svg viewBox="0 0 10 10" width="10" height="10"><line x1="1" y1="8" x2="9" y2="8" stroke="currentColor" stroke-width="1.8"/></svg>
+          </button>
+          <button class="win-btn win-maximize" title="Expand view" aria-label="Maximize window">
+            <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 1h4v4M11 1L6 6M5 11H1V7M1 11l5-5"/>
+            </svg>
+          </button>
+          <button class="win-btn win-close" title="Close" aria-label="Close window">
+            <svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <line x1="1.5" y1="1.5" x2="8.5" y2="8.5"/>
+              <line x1="8.5" y1="1.5" x2="1.5" y2="8.5"/>
+            </svg>
+          </button>
         </div>
       </div>
 
@@ -359,27 +423,35 @@
     </section>
 
     <!-- ====================================================================
-         WINDOW 03: PROJECT SHOWCASE (POSTCARD GRID)
+         WINDOW 04: PROJECT SHOWCASE (POSTCARD GRID)
          ==================================================================== -->
     <section class="os-window is-closed" id="window-projects" role="region" aria-labelledby="title-projects">
       <div class="window-titlebar">
-        <div class="window-controls">
-          <button class="win-btn win-close" title="Close" aria-label="Close window"></button>
-          <button class="win-btn win-minimize" title="Minimize" aria-label="Minimize window"></button>
-          <button class="win-btn win-maximize" title="Maximize" aria-label="Maximize window"></button>
-        </div>
-        <div class="window-title" id="title-projects">
-          <span>📁</span>
-          <span>~/projects</span>
+        <div class="window-title-group">
+          <span class="window-icon">📁</span>
+          <span class="window-title" id="title-projects">~/projects</span>
           <span class="window-title-meta">— Showcase &amp; Case Studies</span>
         </div>
-        <div class="window-actions">
-          <span class="window-action-btn">4 Items</span>
+        <!-- Windows-Style Controls -->
+        <div class="window-controls">
+          <button class="win-btn win-minimize" title="Minimize" aria-label="Minimize window">
+            <svg viewBox="0 0 10 10" width="10" height="10"><line x1="1" y1="8" x2="9" y2="8" stroke="currentColor" stroke-width="1.8"/></svg>
+          </button>
+          <button class="win-btn win-maximize" title="Expand view" aria-label="Maximize window">
+            <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 1h4v4M11 1L6 6M5 11H1V7M1 11l5-5"/>
+            </svg>
+          </button>
+          <button class="win-btn win-close" title="Close" aria-label="Close window">
+            <svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <line x1="1.5" y1="1.5" x2="8.5" y2="8.5"/>
+              <line x1="8.5" y1="1.5" x2="1.5" y2="8.5"/>
+            </svg>
+          </button>
         </div>
       </div>
 
       <div class="window-body">
-        <!-- Filter Bar -->
         <div class="projects-filter-bar">
           <span style="font-size: 11px; font-weight: 700; color: var(--ink-muted);">FILTER:</span>
           <button class="filter-tag-btn active" data-tag="all">All (4)</button>
@@ -389,7 +461,6 @@
           <button class="filter-tag-btn" data-tag="b2b">B2B / SaaS</button>
         </div>
 
-        <!-- Postcard Project Cards Grid -->
         <div class="postcard-grid" id="projects-grid">
           <!-- Dynamically populated via main.js from data/projects.json -->
         </div>
@@ -397,26 +468,34 @@
     </section>
 
     <!-- ====================================================================
-         WINDOW 04: PROJECT CASE STUDY DETAIL (BROWSER CHROME)
+         WINDOW 05: PROJECT CASE STUDY DETAIL (BROWSER CHROME)
          ==================================================================== -->
     <section class="os-window is-closed" id="window-case-study" role="region" aria-labelledby="case-study-title">
       <div class="window-titlebar">
-        <div class="window-controls">
-          <button class="win-btn win-close" title="Close" aria-label="Close window"></button>
-          <button class="win-btn win-minimize" title="Minimize" aria-label="Minimize window"></button>
-          <button class="win-btn win-maximize" title="Maximize" aria-label="Maximize window"></button>
-        </div>
-        <div class="window-title">
-          <span>🌐</span>
-          <span>Browser Preview</span>
+        <div class="window-title-group">
+          <span class="window-icon">🌐</span>
+          <span class="window-title">Browser Preview</span>
           <span class="window-title-meta">— Web Navigator</span>
         </div>
-        <div class="window-actions">
-          <span class="window-action-btn">SSL Secured</span>
+        <!-- Windows-Style Controls -->
+        <div class="window-controls">
+          <button class="win-btn win-minimize" title="Minimize" aria-label="Minimize window">
+            <svg viewBox="0 0 10 10" width="10" height="10"><line x1="1" y1="8" x2="9" y2="8" stroke="currentColor" stroke-width="1.8"/></svg>
+          </button>
+          <button class="win-btn win-maximize" title="Expand view" aria-label="Maximize window">
+            <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 1h4v4M11 1L6 6M5 11H1V7M1 11l5-5"/>
+            </svg>
+          </button>
+          <button class="win-btn win-close" title="Close" aria-label="Close window">
+            <svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <line x1="1.5" y1="1.5" x2="8.5" y2="8.5"/>
+              <line x1="8.5" y1="1.5" x2="1.5" y2="8.5"/>
+            </svg>
+          </button>
         </div>
       </div>
 
-      <!-- Browser Address Bar (Section 4 & 5 Chrome Motif) -->
       <div class="browser-chrome-bar">
         <button class="browser-nav-btn" id="case-study-back-btn" title="Back to Projects Showcase">← Back</button>
         <button class="browser-nav-btn" title="Reload">↻</button>
@@ -438,7 +517,6 @@
         </div>
       </div>
 
-      <!-- Case Study Body -->
       <div class="window-body">
         <article class="case-study-article">
           <header class="case-study-hero">
@@ -477,26 +555,34 @@
     </section>
 
     <!-- ====================================================================
-         WINDOW 05: CONTACT WINDOW (AIRMAIL ENVELOPE)
+         WINDOW 06: CONTACT WINDOW (AIRMAIL ENVELOPE)
          ==================================================================== -->
     <section class="os-window is-closed" id="window-contact" role="region" aria-labelledby="title-contact">
       <div class="window-titlebar">
-        <div class="window-controls">
-          <button class="win-btn win-close" title="Close" aria-label="Close window"></button>
-          <button class="win-btn win-minimize" title="Minimize" aria-label="Minimize window"></button>
-          <button class="win-btn win-maximize" title="Maximize" aria-label="Maximize window"></button>
-        </div>
-        <div class="window-title" id="title-contact">
-          <span>✉️</span>
-          <span>contact.eml</span>
+        <div class="window-title-group">
+          <span class="window-icon">✉️</span>
+          <span class="window-title" id="title-contact">contact.eml</span>
           <span class="window-title-meta">— Compose</span>
         </div>
-        <div class="window-actions">
-          <span class="window-action-btn">Draft</span>
+        <!-- Windows-Style Controls -->
+        <div class="window-controls">
+          <button class="win-btn win-minimize" title="Minimize" aria-label="Minimize window">
+            <svg viewBox="0 0 10 10" width="10" height="10"><line x1="1" y1="8" x2="9" y2="8" stroke="currentColor" stroke-width="1.8"/></svg>
+          </button>
+          <button class="win-btn win-maximize" title="Expand view" aria-label="Maximize window">
+            <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 1h4v4M11 1L6 6M5 11H1V7M1 11l5-5"/>
+            </svg>
+          </button>
+          <button class="win-btn win-close" title="Close" aria-label="Close window">
+            <svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <line x1="1.5" y1="1.5" x2="8.5" y2="8.5"/>
+              <line x1="8.5" y1="1.5" x2="1.5" y2="8.5"/>
+            </svg>
+          </button>
         </div>
       </div>
 
-      <!-- Airmail Border -->
       <div class="airmail-stripe-bar" aria-hidden="true"></div>
 
       <div class="window-body">
@@ -546,22 +632,31 @@
     </section>
 
     <!-- ====================================================================
-         WINDOW 06: RESUME PREVIEW WINDOW
+         WINDOW 07: RESUME PREVIEW WINDOW
          ==================================================================== -->
     <section class="os-window is-closed" id="window-resume" role="region" aria-labelledby="title-resume">
       <div class="window-titlebar">
-        <div class="window-controls">
-          <button class="win-btn win-close" title="Close" aria-label="Close window"></button>
-          <button class="win-btn win-minimize" title="Minimize" aria-label="Minimize window"></button>
-          <button class="win-btn win-maximize" title="Maximize" aria-label="Maximize window"></button>
-        </div>
-        <div class="window-title" id="title-resume">
-          <span>📑</span>
-          <span>resume_preview.pdf</span>
+        <div class="window-title-group">
+          <span class="window-icon">📑</span>
+          <span class="window-title" id="title-resume">resume_preview.pdf</span>
           <span class="window-title-meta">— Document Viewer</span>
         </div>
-        <div class="window-actions">
-          <span class="window-action-btn">Page 1 of 1</span>
+        <!-- Windows-Style Controls -->
+        <div class="window-controls">
+          <button class="win-btn win-minimize" title="Minimize" aria-label="Minimize window">
+            <svg viewBox="0 0 10 10" width="10" height="10"><line x1="1" y1="8" x2="9" y2="8" stroke="currentColor" stroke-width="1.8"/></svg>
+          </button>
+          <button class="win-btn win-maximize" title="Expand view" aria-label="Maximize window">
+            <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 1h4v4M11 1L6 6M5 11H1V7M1 11l5-5"/>
+            </svg>
+          </button>
+          <button class="win-btn win-close" title="Close" aria-label="Close window">
+            <svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <line x1="1.5" y1="1.5" x2="8.5" y2="8.5"/>
+              <line x1="8.5" y1="1.5" x2="1.5" y2="8.5"/>
+            </svg>
+          </button>
         </div>
       </div>
 

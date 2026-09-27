@@ -1,6 +1,6 @@
 /**
  * Window Manager — Dependency-Free Vanilla JS Windowing System
- * Handles dragging, z-index elevation, closing, minimizing, maximizing, and tiling.
+ * Handles Windows-style controls, dragging, z-index elevation, closing, minimizing, maximizing/expanding, and tiling.
  */
 
 class WindowManager {
@@ -66,12 +66,12 @@ class WindowManager {
     if (titlebar) {
       titlebar.addEventListener('mousedown', (e) => {
         // Ignore if clicking window control buttons
-        if (e.target.closest('.win-btn') || e.target.closest('.window-action-btn')) return;
+        if (e.target.closest('.win-btn') || e.target.closest('.window-action-btn') || e.target.closest('a')) return;
         this.handleDragStart(e, winObj);
       });
     }
 
-    // Window controls
+    // Windows Controls
     if (closeBtn) {
       closeBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -174,12 +174,33 @@ class WindowManager {
     const winObj = this.windows.find(w => w.id === winId);
     if (!winObj) return;
 
-    winObj.el.classList.toggle('is-maximized');
+    const isMax = winObj.el.classList.toggle('is-maximized');
     this.focusWindow(winObj);
+
+    // Update maximize/expand button icon and title
+    const maxBtn = winObj.el.querySelector('.win-maximize');
+    if (maxBtn) {
+      if (isMax) {
+        maxBtn.setAttribute('title', 'Restore view');
+        maxBtn.setAttribute('aria-label', 'Restore window size');
+        maxBtn.innerHTML = `
+          <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 1v3H1M4 4L1 1M8 11v-3h3M8 8l3 3"/>
+          </svg>
+        `;
+      } else {
+        maxBtn.setAttribute('title', 'Expand view');
+        maxBtn.setAttribute('aria-label', 'Expand window size');
+        maxBtn.innerHTML = `
+          <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 1h4v4M11 1L6 6M5 11H1V7M1 11l5-5"/>
+          </svg>
+        `;
+      }
+    }
   }
 
   handleDragStart(e, winObj) {
-    // Only allow drag on desktop viewports
     if (window.innerWidth <= 960) return;
     if (winObj.el.classList.contains('is-maximized')) return;
 
@@ -204,9 +225,8 @@ class WindowManager {
     let newX = e.clientX - this.dragOffset.x;
     let newY = e.clientY - this.dragOffset.y;
 
-    // Viewport boundaries
     const maxX = window.innerWidth - winEl.offsetWidth - padding;
-    const maxY = window.innerHeight - 60; // Leave titlebar visible
+    const maxY = window.innerHeight - 60;
 
     newX = Math.max(padding, Math.min(newX, maxX));
     newY = Math.max(menuHeight + padding, Math.min(newY, maxY));
@@ -248,9 +268,9 @@ class WindowManager {
   cascadeWindows() {
     if (window.innerWidth <= 960) return;
 
-    let startX = 60;
-    let startY = 60;
-    const offset = 32;
+    let startX = 50;
+    let startY = 55;
+    const offset = 30;
 
     this.windows.forEach((winObj, index) => {
       if (!winObj.el.classList.contains('is-closed')) {
@@ -304,12 +324,13 @@ class WindowManager {
     if (window.innerWidth <= 960) return;
 
     const defaults = {
-      'window-welcome': { top: '50px', left: '260px', transform: 'rotate(-1.2deg)' },
+      'window-welcome': { top: '50px', left: '360px', transform: 'rotate(-1.2deg)' },
+      'window-currently': { top: '60px', left: '30px', transform: 'none' },
       'window-about': { top: '70px', left: '380px', transform: 'none' },
       'window-projects': { top: '90px', left: '220px', transform: 'none' },
-      'window-case-study': { top: '60px', left: '260px', transform: 'none' },
-      'window-contact': { top: '120px', left: '440px', transform: 'none' },
-      'window-resume': { top: '80px', left: '340px', transform: 'none' }
+      'window-case-study': { top: '50px', left: '260px', transform: 'none' },
+      'window-contact': { top: '110px', left: '420px', transform: 'none' },
+      'window-resume': { top: '80px', left: '320px', transform: 'none' }
     };
 
     this.windows.forEach(w => {
@@ -323,5 +344,4 @@ class WindowManager {
   }
 }
 
-// Export singleton instance or class
 window.WindowManager = WindowManager;
